@@ -44,6 +44,24 @@ $navbar-default-bg: #073B15;
   text-decoration: none;
 }
 
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  p {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+  }
+  ul li {
+      float: left;
+      margin-left: 15px;
+    }
+}
+
 /* Dropdown menu */
 
 .dropdown-menu.active {
