@@ -27,7 +27,15 @@ $navbar-default-bg: #073B15;
   text-decoration: none;
 }
 
-.jumbotron h1,h2 {
+.jumbotron h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.jumbotron h2 {
   color: #333;
   text-align: center;
   margin-bottom: 30px;
@@ -49,17 +57,36 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
-  p {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-  }
-  ul li {
-      float: left;
-      margin-left: 15px;
-    }
+}
+
+footer p {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+.description {
+  margin-top: 0;
+}
+
+.well a {
+  color: #073B15;
+}
+
+.chef_info {
+  margin-top: 10px;
+}
+
+.colormatch a {
+  color: #073B15;
 }
 
 /* Dropdown menu */
