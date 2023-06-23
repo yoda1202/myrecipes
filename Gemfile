@@ -2,7 +2,10 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "rails",                      "7.0.4"
+gem "image_processing",           "1.12.2"
+gem "active_storage_validations", "0.9.8"
 gem "bcrypt",                     "3.1.18"
+gem "faker",                      "2.21.0"
 gem "will_paginate",              "3.3.1"
 gem "bootstrap-will_paginate",    "1.0.0"
 gem "bootstrap-sass",             "3.4.1"
@@ -36,5 +39,6 @@ group :test do
 end
 
 group :production do
-  gem "pg", "1.3.5"
+  gem "pg",         "1.3.5"
+  gem "aws-sdk-s3", "1.114.0", require: false
 end
