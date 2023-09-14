@@ -31,7 +31,7 @@ class ChefsController < ApplicationController
 
   def update
     if @chef.update(chef_params)
-      flash[:success] = "Your account was updated successfully"
+      flash[:success] = "更新しました"
       redirect_to @chef
     else
       render 'edit', status: :unprocessable_entity
@@ -41,7 +41,7 @@ class ChefsController < ApplicationController
   def destroy
     if !@chef.admin?
       @chef.destroy
-      flash[:danger] = "Chef and all associated recipes have been deleted!"
+      flash[:danger] = "削除しました"
       redirect_to chefs_path
     end
   end
@@ -58,14 +58,14 @@ class ChefsController < ApplicationController
 
   def require_same_user
     if current_chef != @chef and !current_chef.admin?
-      flash[:danger] = "You can only edit or delete your own account"
+      flash[:danger] = "自身のアカウントのみ編集、削除できます"
       redirect_to chefs_path
     end
   end
 
   def require_admin
     if logged_in? & !current_chef.admin?
-      flash[:danger] = "Only admin users can perform that action"
+      flash[:danger] = "管理者のみ実行可能です"
       redirect_to root_path
     end
   end

@@ -8,17 +8,17 @@ class SessionsController < ApplicationController
     chef = Chef.find_by(email: params[:session][:email].downcase)
     if chef && chef.authenticate(params[:session][:password])
       session[:chef_id] = chef.id
-      flash[:success] = "You have successfully logged in"
+      flash[:success] = "ログインしました"
       redirect_to chef
     else
-    flash.now[:danger] = "There was something wrong with your login information"
+    flash.now[:danger] = "メールアドレスまたはパスワードが間違っています"
       render 'new', status: :unprocessable_entity
     end
   end
 
   def destroy
     session[:chef_id] = nil
-    flash[:success] = "You have logged out"
+    flash[:success] = "ログアウトしました"
     redirect_to root_path, status: :see_other
   end
 

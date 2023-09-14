@@ -9,7 +9,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new(ingredient_params)
     if @ingredient.save
-      flash[:success] = "Ingredient was successfully created"
+      flash[:success] = "食材を作成しました"
       redirect_to ingredient_path(@ingredient)
     else
       render 'new', status: :unprocessable_entity
@@ -22,7 +22,7 @@ class IngredientsController < ApplicationController
 
   def update
     if @ingredient.update(ingredient_params)
-      flash[:success] = "Ingredient name was updated successfully"
+      flash[:success] = "食材を編集しました"
       redirect_to @ingredient
     else
       render 'edit', status: :unprocessable_entity
@@ -49,7 +49,7 @@ class IngredientsController < ApplicationController
 
   def require_admin
     if !logged_in? || (logged_in? and !current_chef.admin?)
-      flash[:danger] = "Only admin users can perform that action"
+      flash[:danger] = "管理者のみ実行可能です"
       redirect_to ingredients_path
     end
   end

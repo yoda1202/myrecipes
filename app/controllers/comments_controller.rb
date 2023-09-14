@@ -6,10 +6,10 @@ class CommentsController < ApplicationController
     @comment = @recipe.comments.build(comment_params)
     @comment.chef = current_chef
     if @comment.save
-      flash[:success] = "Comment was created successfully"
+      flash[:success] = "コメントを投稿しました"
       redirect_to recipe_path(@recipe)
     else
-      flash[:danger] = "Comment was not created"
+      flash[:danger] = "コメントを投稿できませんでした"
       redirect_back fallback_location: root_path
     end
   end

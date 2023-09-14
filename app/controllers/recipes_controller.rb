@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.chef = current_chef
     if @recipe.save
-      flash[:success] = "Recipe was created successfully!"
+      flash[:success] = "レシピを投稿しました!"
       redirect_to recipe_path(@recipe)
     else
       render 'new', status: :unprocessable_entity
@@ -33,7 +33,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-      flash[:success] = "Recipe was updated successfully!"
+      flash[:success] = "レシピを更新しました!"
       redirect_to recipe_path(@recipe)
     else
       render 'edit', status: :unprocessable_entity
@@ -42,7 +42,7 @@ class RecipesController < ApplicationController
 
   def destroy
     Recipe.find(params[:id]).destroy
-    flash[:success] = "Recipe deleted successfully"
+    flash[:success] = "レシピを削除しました"
     redirect_to recipes_path, status: :see_other
   end
 
@@ -58,7 +58,7 @@ class RecipesController < ApplicationController
 
     def require_same_user
       if current_chef != @recipe.chef and !current_chef.admin?
-        flash[:danger] = "You can only edit or delete your own recipes"
+        flash[:danger] = "自身のアカウントのみ編集、削除できます"
         redirect_to recipes_path
       end
     end

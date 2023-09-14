@@ -5,7 +5,7 @@
   </div>
 </div>
 <% if @chef.recipes.count != 0 %>
-  <h4 align="center"><%= @chef.chefname %>'s recipes</h4>
+  <h4 align="center"><%= @chef.chefname %>さんのレシピ</h4>
   <div align="center">
     <%= will_paginate @chef_recipes %>
   </div>
@@ -14,5 +14,5 @@
     <%= will_paginate @chef_recipes %>
   </div>
 <% else %>
-  <h4 align="center">No recipes yet!</h4>
+  <h4 align="center">レシピがありません</h4>
 <% end %>

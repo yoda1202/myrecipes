@@ -1,4 +1,4 @@
-<%= render 'shared/page_title', title: "showing all chefs" %>
+<%= render 'shared/page_title', title: "シェフ一覧" %>
 
 <div align="center">
   <%= will_paginate %>
@@ -10,8 +10,8 @@
           <li class="chef-title"><%= link_to chef.chefname.capitalize, chef_path(chef) %></li>
           <li><small><%= pluralize(chef.recipes.count, "recipe") if chef.recipes %></small></li>
           <% if logged_in? and current_chef.admin? && !chef.admin %>
-          <li><%= link_to "Delete this chef", chef_path(chef),
-                  data: { "turbo-method": :delete, turbo_confirm: "Are you sure you want to delete the chef and all associated recipes?" } %></li>
+          <li><%= link_to "シェフを削除", chef_path(chef),
+                  data: { "turbo-method": :delete, turbo_confirm: "本当に削除しますか?" } %></li>
           <% end %>
         </div>
       </div>
