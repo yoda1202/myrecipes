@@ -1,4 +1,4 @@
-Chef.create!(chefname:  "管理者",
+Chef.create!(chefname:  "admin",
              email: "admin@example.jp",
              password:  "password",
              password_confirmation: "password",

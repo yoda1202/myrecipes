@@ -1,0 +1,26 @@
+michael:
+  chefname: Michael Example
+  email: michael@example.com
+  password_digest: <%= Chef.digest('password') %>
+
+archer:
+  chefname: Sterling Archer
+  email: duchess@example.gov
+  password_digest: <%= Chef.digest('password') %>
+
+lana:
+  chefname: Lana Kane
+  email: hands@example.gov
+  password_digest: <%= Chef.digest('password') %>
+
+malory:
+  chefname: Malory Archer
+  email: boss@example.gov
+  password_digest: <%= Chef.digest('password') %>
+
+<% 30.times do |n| %>
+chef_<%= n %>:
+  chefname:  <%= "Chef #{n}" %>
+  email: <%= "chef-#{n}@example.com" %>
+  password_digest: <%= Chef.digest('password') %>
+<% end %>
