@@ -15,7 +15,7 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
     if @chef.save
       session[:chef_id] = @chef.id
-      flash[:success] = "Welcome #{@chef.chefname} to MyRecipes App!"
+      flash[:success] = "#{@chef.chefname}シェフ、MyRecipesにようこそ!"
       redirect_to chef_path(@chef)
     else
       render 'new', status: :unprocessable_entity
